@@ -1,0 +1,73 @@
+:root {
+  --cell-size: 30px;
+  --board-size: 200px;
+  --font-size: 10px;
+}
+
+html{
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#board {
+  padding: 0;
+  width: var(--board-size);
+  height: var(--board-size);
+  display: flex;
+}
+
+.side {
+  background-color: rgb(102, 100, 100);
+  padding-top: var(--cell-size);
+  padding-bottom: var(--cell-size);
+}
+.middleArea {
+  display: block;
+}
+.side .cell {
+  background: none;
+}
+.middleArea .side {
+  display: flex;
+  padding: 0;
+}
+
+.middleArea .side:first-child .cell {
+  transform: rotate(180deg);
+}
+
+#board > .side:last-child .cell {
+  transform: rotate(180deg);
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: var(--font-size);
+  font-weight: 600;
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+
+.row .cell {
+  background: rgb(196, 182, 173);
+}
+
+.row:nth-child(odd) .cell:nth-child(odd),
+.row:nth-child(even) .cell:nth-child(even) {
+  background-color: rgb(199, 102, 46);
+}
